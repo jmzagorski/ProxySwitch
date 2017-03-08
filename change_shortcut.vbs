@@ -4,17 +4,28 @@
 
 Option Explicit
 
-dim sh, shortcut, user, proxypath
+dim sh, shortcut, user, appPath, fso, onOff, batFile, iconFile
 
 'On Error Resume Next
 
 Set sh = CreateObject("WScript.Shell")
+Set fso = CreateObject("Scripting.FileSystemObject")
+
+appPath = fso.GetAbsolutePathName(".")
 user=sh.ExpandEnvironmentStrings("%USERPROFILE%")
-proxyPath =  user + "\ProxySwitch"
+onOff=WScript.Arguments(0)
+batFile="proxy_off.bat"
+iconFile="on.ico"
+
+If onOff = "on" Then
+  batFile="proxy_on.bat"
+  iconFile="off.ico"
+End if
+
 Set shortcut = sh.CreateShortcut(user + "\Desktop\Proxy.lnk")
-shortcut.TargetPath = proxyPath + "\proxy_off.bat"
-shortcut.IconLocation = proxyPath + "\icons\on.ico"
-shortcut.WorkingDirectory = proxyPath
+shortcut.TargetPath = appPath + "\" + batFile
+shortcut.IconLocation = appPath + "\icons\" + iconFile
+shortcut.WorkingDirectory = appPath
 shortcut.WindowStyle = 7
 shortcut.Save
 
