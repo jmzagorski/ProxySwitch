@@ -7,7 +7,7 @@ turns internet proxy on/off through registry in windows. Plus does the same for 
 1. `git clone https://github.com/jmzagorski/ProxySwitch.git <yourfolder>`
 2. right click your desktop and go to New -> Shortcut
 3. The first box is: **type the location of the item**. Enter *[yourfolder]\proxy_off.bat* if your proxy is on or *[yourfolder]\proxy_on.bat* if your proxy is off
-4. The second box is: **type a name for this shortcut**. Enter in anything. Mine is called Proxy
+4. The second box is: **type a name for this shortcut**. Make sure it is called Proxy
 
 ####Special Note for Dev tools
 you need to have an environment variable called %PROXY_WORK%. see the dev batch files
