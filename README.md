@@ -1,5 +1,5 @@
 # ProxySwitch
-turns internet proxy on/off through registry in windows. Plus does the same for developer tools npm and git
+turns internet proxy on/off through registry in windows. Plus does the some developer tools (see dev_on.bat)
 
 #thanks to [StackOverflow](http://stackoverflow.com/questions/26708347/windows-desktop-widget-to-turn-proxy-on-and-off)
 
@@ -10,4 +10,4 @@ turns internet proxy on/off through registry in windows. Plus does the same for 
 4. The second box is: **type a name for this shortcut**. Make sure it is called Proxy
 
 ####Special Note for Dev tools
-you need to have an environment variable called %PROXY_WORK%. see the dev batch files
+you need to have an environment variable called %http_proxy%.
